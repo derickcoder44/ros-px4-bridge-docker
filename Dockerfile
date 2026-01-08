@@ -27,7 +27,7 @@ WORKDIR /root/workspace
 RUN mkdir -p ros2_ws/src && \
     cd ros2_ws/src && \
     git clone -b ${PX4_VERSION} https://github.com/PX4/px4_msgs.git && \
-    git clone -b v${PX4_VERSION} https://github.com/PX4/px4_ros_com.git
+    git clone -b release/v1.14 https://github.com/PX4/px4_ros_com.git
 
 # Build ROS 2 workspace
 RUN . /opt/ros/humble/setup.sh && \
