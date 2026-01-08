@@ -4,8 +4,14 @@ set -e
 
 echo "Installing system dependencies..."
 
-apt-get update
-apt-get install -y \
+# Use sudo if not running as root
+SUDO=""
+if [ "$(id -u)" != "0" ]; then
+    SUDO="sudo"
+fi
+
+$SUDO apt-get update
+$SUDO apt-get install -y \
   git \
   python3-pip \
   python-is-python3 \
